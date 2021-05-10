@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body onload="draw()">
+	<canvas id="sketch" width="300" height="300"></canvas>
+	<script>
+		function draw(){
+		var sketch = document.getElementById('sketch');
+		var context = sketch.getContext("2d");
+		
+		var string = prompt("How many pairs do you want?")
+		var num = parseInt(string);
+		var total = num *2 - 1;
+		for (var i =0; i <= total; i++){
+			if(i%2==0){
+				context.fillStyle = "#00ff00";
+				context.fillRect((i*25),20,20,20);
+			}else{
+				context.fillStyle = "#0000ff";
+				context.beginPath();
+				context.arc((i*25), 30, 10, 20, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+			}
+		}
+	}
+	</script>
+</body>
+</html>
