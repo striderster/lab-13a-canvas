@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body onload="draw()">
+	<canvas id="sketch" width="750" height="750"></canvas>
+	<script>
+		function draw(){
+		var sketch = document.getElementById('sketch');
+		var context = sketch.getContext("2d");
+		
+		var circle = prompt("How many circles in a row do you want?");
+		var circles = parseInt(circle);
+
+		while (circles < 1){
+			circle = prompt("Enter a number higher than 0.");
+			circles = parseInt(circle);
+		}
+		context.fillStyle = "#000000";
+		for(var x = circles; x <= 0; --x){
+		context.beginPath();
+		context.arc((i*25), 10, 10, 0, 2 * Math.PI, true);
+		context.closePath();
+		context.fill();}
+	}
+	
+		
+	</script>
+</body>
+</html>
